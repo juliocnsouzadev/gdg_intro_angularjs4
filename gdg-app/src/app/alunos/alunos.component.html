@@ -1,9 +1,28 @@
-<tbody>
-  <tr *ngFor="let aluno of alunos">
-    <td>{{aluno.ra}}</td>
-    <td> --- </td>
-    <td>{{aluno.name}}</td>
-    <br>
-  </tr>
-  
-</tbody>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Alunos AngularJS 4</h1> 
+  </div> 
+    <div class="form-group center">
+      <label for="ra">RA:</label>
+      <input type="text" class="form-control" id="ra">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name">
+      <button class="btn btn-primary pull-right" style="margin-top:5px" id="send">Salvar</button>
+    </div>
+  <h2>Lista de Alunos</h2> 
+  <table class="table table-striped table-bordered table-hover">
+      <thead>
+          <tr>
+            <th>RA</th>
+            <th>Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+    <tr *ngFor="let aluno of alunos">
+      <td>{{aluno.ra}}</td>
+      <td>{{aluno.name}}</td>
+      <td><button class="btn btn-danger">Delete</button></td>
+      <br>
+    </tr>
+  </table>
+</div>

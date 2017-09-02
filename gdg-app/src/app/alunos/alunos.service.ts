@@ -6,18 +6,16 @@ export class AlunosService {
 
 
   urlList = "http://69.10.49.96:8080/app/ws/students/list";
+  private headers;
 
   constructor(private http: Http) {
+    this.headers = new Headers();
+    this.headers.append('Content-Type', 'application/json');
    }
 
-   private getHeaders() {
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    return headers;
-  }
 
    getAlunos(){
-     return this.http.get(this.urlList, this.getHeaders()).map(res => res.json());
+     return this.http.get(this.urlList, this.headers).map(res => res.json());
    }
 
 }
